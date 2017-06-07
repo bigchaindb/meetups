@@ -92,8 +92,8 @@ now switch
 
 # deploy
 now
-# switch alias to new deployment, e.g.
-now alias bigchaindb-meetups-wxkyissxos bigchaindb-meetups
+# switch alias to new deployment
+now alias
 ```
 
 ## Authors
