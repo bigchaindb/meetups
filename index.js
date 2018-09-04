@@ -33,12 +33,12 @@ const fetchMeetups = () => {
 
             data = data_
 
-            log(`Re-built meetups cache. ` +
+            log('Re-built meetups cache. ' +
                 `Total: ${data_.length} public meetups. ` +
                 `Elapsed: ${(new Date() - start)}ms`)
         })
-        .catch(err => {
-            logError('Error parsing response from Meetup: ' + err.stack)
+        .catch(error => {
+            logError('Error parsing response from Meetup: ' + error.stack)
         })
 }
 
@@ -52,8 +52,8 @@ setInterval(fetchMeetups, ms('15m'))
 // Create the response
 //
 module.exports = async (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*')
-    res.setHeader('Access-Control-Allow-Methods', 'GET')
+    await res.setHeader('Access-Control-Allow-Origin', '*')
+    await res.setHeader('Access-Control-Allow-Methods', 'GET')
 
     return data
 }
