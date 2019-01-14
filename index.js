@@ -13,6 +13,7 @@ const handleResponse = res => {
     if (res.status !== 200) {
         return logError('Non-200 response code from Meetup: ' + res.status)
     }
+
     return res.json()
 }
 
